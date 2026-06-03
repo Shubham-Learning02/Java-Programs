@@ -1,0 +1,66 @@
+import java.util.*;
+public class PrimeAdam extends adaaam
+{
+    boolean isPrime(int n)
+    {
+        int c=0;
+        for(int i=1;i<=n;i++)
+        {
+            if(n%i==0)
+                c++;
+        }
+        if(c==2)
+            return true;
+        else 
+            return false;
+    }
+    boolean adam(int n)
+    {int rev=reverse(n);
+        int sq_no=n*n;
+        int rev_sq=rev*rev;
+        if(sq_no==reverse(rev_sq))
+            return true;
+        else
+            return false;
+    }
+    int reverse(int n)
+    {
+        int rev=0;
+        while(n!=0)
+        {
+            int d=n%10;
+            rev=rev*10+d; 
+            n/=10;
+        }
+        return rev;
+    }
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the value of m and n");
+        System.out.print("m=");
+        int m=sc.nextInt();
+        System.out.print("n=");
+        int n=sc.nextInt();
+        if(m>=0 && n>0 && m<n)
+        { 
+            PrimeAdam ob=new PrimeAdam();
+            int freq=0;
+            System.out.println("THE PRME ADAM INTEGERS ARE:");
+
+            for(int i=m;i<=n;i++)
+            {
+                if(ob.isPrime(i) && ob.isAdam(i))
+                {
+                    freq++;
+                    System.out.print(i + ",");
+                }
+            }
+            if(freq==0)
+                System.out.println("NIL");
+            System.out.println("FREQUENCY OF PRIME ADAM INTEGERS IS:" +freq); 
+        }
+        else
+            System.out.println("INVALID INPUT");
+    }
+}

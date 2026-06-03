@@ -1,0 +1,51 @@
+import java.util.*;
+public class adaaam
+{
+   public static int revs(int n)
+   {
+       int d=0;int rev=0;
+       while(n!=0)
+       {
+           d=n%10;
+           rev=rev*10+d;
+           rev=rev/10;
+       }
+       return rev;
+   }
+   public static boolean isAdam(int n)
+   {
+       int revn=revs(n);
+       int sq=n*n;
+       int revsq=revs(sq);
+       if(revn==revsq)
+       {
+           return true;
+       }
+       else
+       return false;
+   }
+   public static void main(String[]args)
+   {
+       Scanner sc=new Scanner(System.in);
+       System.out.println("Enter the value of m");
+       int m=sc.nextInt();
+       System.out.println("Enter the value of n");
+       int n=sc.nextInt();
+       int c=0;
+       for(int i=m;i<=n;i++)
+       {
+            boolean adam=isAdam(i);
+            if(adam)
+            {
+                System.out.println(i+" ");
+                c++;
+            }
+      } 
+      if(c==0)
+      {
+           System.out.println("No Adam Numbers");
+      }
+      else
+       System.out.println("The Number of adam Numbers are:"+c);
+   }
+}

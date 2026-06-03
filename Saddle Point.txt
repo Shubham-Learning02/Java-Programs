@@ -1,0 +1,52 @@
+import java.util.*;
+public class SaddlePt
+{
+    void main()
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the matrix size:");
+        int n=sc.nextInt();
+        int ar[][]=new int[n][n];
+        System.out.println("Enter the elements of the array:");
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                ar[i][j]=sc.nextInt();
+            }
+        }
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                System.out.print(ar[i][j]+" ");
+            }
+            System.out.println();
+        }
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {   int max=0;
+                int min=100;
+                for(int k=0;k<n;k++)
+                {
+                     if(ar[k][j]>max)
+                     {
+                         max=ar[k][j];
+                     }
+                }
+                for(int l=0;l<n;l++)
+                {
+                    if(ar[i][l]<min)
+                    {
+                        min=ar[i][l];
+                    }
+                }
+                if(max==min)
+                {
+                    System.out.println(max+",is a saddlepoint number");
+                }
+            }
+        }
+    }
+}

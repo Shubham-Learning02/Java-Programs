@@ -1,0 +1,40 @@
+import java.util.*;
+public class Fascinating
+{
+    public static void main()
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the number");
+        int n=sc.nextInt();
+        int n2,n3=0;
+        String con;
+        n2=2*n;
+        n3=3*n; 
+        String s=Integer.toString(n);   
+        String s2=Integer.toString(n2);
+        String s3=Integer.toString(n3);
+        con=s.concat(s2);
+        con=con.concat(s3);int co=0;
+        int l=con.length();
+        int c=0;
+        for(int i=1;i<9;i++)
+        {
+            String g=Integer.toString(i);
+            char ii=g.charAt(0);
+            for(int j=0;j<l;j++)
+            {
+                char ch=con.charAt(j);
+                if(ii==ch)
+                {
+                    c++;
+                }
+            }
+        }
+        if(c==9)
+        {
+            System.out.println(n+",is a fascinating number.");
+        }
+        else
+         System.out.println(n+",is not a fascinating number.");
+    }
+}
