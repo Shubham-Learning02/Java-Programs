@@ -1,0 +1,48 @@
+import java.util.*;
+public class Cipher
+{
+    void main()
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the sentence:");
+        String s=sc.nextLine();
+        StringTokenizer st=new StringTokenizer(s);
+        int c=st.countTokens();String fin="";char d=s.charAt(s.length()-1);
+        if(d!='.'||d!='?'||d!='!')
+        {
+            System.out.println("Error input.");
+            System.exit(0);
+        }
+        while(c!=0)
+        {
+            String g=st.nextToken();
+            int l=g.length();
+            for(int i=0;i<l;i++)
+            {
+                char ch=g.charAt(i);
+                int v=ch;int f=0;
+                if(v>=65 && v<=78)
+                {
+                    f=v+13;
+                }
+                else if(v>=79&&v<=90)
+                {
+                    f=v-13;
+                }
+                else if(v>=97 && v<=110)
+                {
+                    f=v+13;
+                }
+                else if(v>=98 && v<=122)
+                {
+                    f=v-13;
+                }
+                char ff=(char)f;
+                fin+=ff;
+            }
+            fin+=" ";
+            c--;
+        }
+        System.out.println(fin);
+    }
+}

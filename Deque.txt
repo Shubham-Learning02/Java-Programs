@@ -1,0 +1,40 @@
+public class deque
+{
+    private int arr[];
+    private int front;
+    private int rear;
+    private int size;
+    private int capacity;
+    public deque(int capacity)
+    {
+        this.capacity=capacity;
+        arr=new int[capacity];
+        front=-1;
+        rear=-1;
+        size=0;
+    }
+    public boolean isEmpty()
+    {
+        return size==0;
+    }
+    public boolean isFull()
+    {
+        return size==capacity; 
+    }
+    public void insertFront(int value)
+    {
+        if(isFull())
+        {
+            System.out.println("Deque is full. Cannot insert in the front.");
+        }
+        if(isEmpty())
+        {
+            front=0;
+            rear=0;
+        }
+        else
+        front=(front-1+capacity)%capacity;
+        arr[front]=value;
+        size++;
+    }
+}

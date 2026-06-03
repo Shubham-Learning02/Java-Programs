@@ -1,0 +1,61 @@
+            import java.util.*;
+public class MatMult
+{
+    public void main()
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the size of the 1st array(m):");
+        int m=sc.nextInt();
+        System.out.println("Enter the size of the 1st array(n):");
+        int n=sc.nextInt();
+        int a1[][]=new int[m][n];
+        System.out.println("Enter the size of the 2nd array(x):");
+        int x=sc.nextInt();
+        System.out.println("Enter the size of the 2rd array(y):");
+        int y=sc.nextInt(); 
+        int a2[][]=new int[x][y];
+        if(n==x)
+        {
+            System.out.println("Enter the 1st array:");
+        for(int i=0;i<m;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                a1[i][j]=sc.nextInt();  
+            }
+        }
+        System.out.println("Enter the 2nd array:");
+        for(int i=0;i<x;i++)
+        {
+            for(int j=0;j<y;j++)
+            {
+                a2[i][j]=sc.nextInt();
+            }
+        }
+        int b[][]=new int[m][y];
+        for(int i=0;i<m;i++)
+        {
+            for(int j=0;j<y;j++)
+            {
+                int prod=0;
+                for(int k=0;k<m;k++)
+                {
+                    prod+=a1[i][k]*a2[k][j];
+                }
+                b[i][j]=prod;
+            }
+        }
+        System.out.println("The multiplied matrix:");
+        for(int i=0;i<m;i++)
+        {
+            for(int j=0;j<y;j++)
+            {
+                System.out.print(b[i][j]+" ");
+            } 
+            System.out.println();
+        }
+        }
+        else
+         System.out.println("Mathematical error");
+    }
+}
