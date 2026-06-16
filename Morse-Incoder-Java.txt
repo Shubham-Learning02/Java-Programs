@@ -1,0 +1,150 @@
+import java.util.*;
+public class Inc_morse
+{   
+    String a="";
+    String incoder(String aa)
+    {
+        String fin="";
+        aa=aa.toLowerCase();
+        for(int i=0;i<aa.length();i++)
+        {
+            char b=aa.charAt(i);
+            switch(b)
+            {
+                case ' ':
+                    fin+=" ";
+                    break;
+                case 'a':
+                    fin+=".-";
+                    break;
+                case 'b':
+                    fin+="-...";
+                    break;
+                case 'c':
+                    fin+="-.-.";
+                    break;
+                case 'd':
+                    fin+="-..";
+                    break;
+                case 'e':
+                    fin+=".";
+                    break;
+                case 'f':
+                    fin+="..-.";
+                    break;
+                case 'g':
+                    fin+="--.";
+                    break;
+                case 'h':
+                    fin+="....";
+                    break;
+                case 'i':
+                    fin+="..";
+                    break;
+                case 'j':
+                    fin+=".---";
+                    break;
+                case 'k':
+                    fin+="-.-";
+                    break;
+                case 'l':
+                    fin+=".-..";
+                    break;
+                case 'm':
+                    fin+="--";
+                    break;
+                case 'n':
+                    fin+="-.";
+                    break;
+                case 'o':
+                    fin+="---";
+                    break;
+                case 'p':
+                    fin+=".--.";
+                    break;
+                case 'q':
+                    fin+="--.-";
+                    break;
+                case 'r':
+                    fin+=".-.";
+                    break;
+                case 's':
+                    fin+="...";
+                    break;
+                case 't':
+                    fin+="-";
+                    break;
+                case 'u':
+                    fin+="..-";
+                    break;
+                case 'v':
+                    fin+="...-";
+                    break;
+                case 'w':
+                    fin+=".--";
+                    break;
+                case 'x':
+                    fin+="-..-";
+                    break;
+                case 'y':
+                    fin+="-.--";
+                    break;
+                case 'z':
+                    fin+="--..";
+                    break;
+                case '1':
+                    fin+=".----";
+                    break;
+                case '2':
+                    fin+="..---";
+                    break;
+                case '3':
+                    fin+="...--";
+                    break;
+                case '4':
+                    fin+="....-";
+                    break;
+                case '5':
+                    fin+=".....";
+                    break;
+                case '6':
+                    fin+="-....";
+                    break;
+                case '7':
+                    fin+="--...";
+                    break;
+                case '8':
+                    fin+="---..";
+                    break;
+                case '9':
+                    fin+="----.";
+                    break;
+                case '0':
+                    fin+="-----";
+                    break;
+                case '.':
+                    fin+=".-.-.-";
+                    break;
+                case ',':
+                    fin+="--..--";
+                    break;
+                case '?':
+                    fin+="..--..";
+                    break;
+                default:
+                    fin+="|"+b+"|";
+            }
+            fin+=" ";
+        }
+        return fin;
+    }
+    void main()
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("The morse is displayed in \".\" and \"-\" and the morse of characters not available is displayed in |...|");
+        System.out.println("Enter the word:");
+        String g=sc.nextLine();
+        String c=incoder(g);
+        System.out.println("The converted code is: "+c);
+    }
+}
